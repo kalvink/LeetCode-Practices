@@ -24,9 +24,11 @@ public class SmallerThanCurrentNum {
 
 	public static int[] smallerNumbersThanCurrent(int[] nums) {
 		int count = 0;
-		int outnums[] = { 0, 0, 0, 0, 0 };
+		Object[] outnums = new Object[nums.length];
+		int[] arr = { 0, 0, 0, 0, 0 };
+
 		for (int i = 0; i < nums.length; i++) {
-			for (int j = 1; j < nums.length; j++) {
+			for (int j = 0; j < nums.length; j++) {
 				if (nums[j] < nums[i]) {
 					count++;
 				}
@@ -34,19 +36,20 @@ public class SmallerThanCurrentNum {
 			outnums[i] = count;
 			count = 0;
 		}
-		iterate(outnums);
-		return outnums;
+		return iterate(outnums, nums);
 
 	}
 
-	public static void iterate(int[] outnums) {
-		for (int i = 0; i < outnums.length; i++) {
-			System.out.print(outnums[i]);
+	public static int[] iterate(Object[] outnums, int nums[]) {
+		for (int i = 0; i < nums.length; i++) {
+			nums[i] = (Integer) outnums[i];
+			System.out.print(nums[i]);
 		}
+		return nums;
 	}
 
 	public static void main(String[] args) {
-		int[] nums = { 8, 1, 2, 2, 3 };
+		int[] nums = { 6,5,4,8};
 		smallerNumbersThanCurrent(nums);
 	}
 }
