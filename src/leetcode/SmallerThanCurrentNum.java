@@ -49,7 +49,7 @@ public class SmallerThanCurrentNum {
 	}
 
 	public static void main(String[] args) {
-		int[] nums = { 6,5,4,8};
+		int[] nums = { 8, 1, 2, 2, 3 };
 		smallerNumbersThanCurrent(nums);
 	}
 }
